@@ -11,6 +11,7 @@ import org.surplus.radolf.Notebook.service.IdNumberService;
 
 @Controller
 public class IdNumberController {
+
     private IdNumberService idnumberservice;
     private String sortInsertedMethod = "ASC";
 
@@ -24,6 +25,8 @@ public class IdNumberController {
         PageWrapper<IdNumber> page = new PageWrapper<IdNumber>(IdNumberPage, "/idnumber");
         model.addAttribute("idnumbers", page.getContent());
         model.addAttribute("sort", sortInsertedMethod);
+        String filterMethod = "ALL";
+        model.addAttribute("filter", filterMethod);
         model.addAttribute("page", page);
         return "idnumber";
     }
