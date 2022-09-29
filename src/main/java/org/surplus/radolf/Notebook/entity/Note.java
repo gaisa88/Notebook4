@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
-@Table(name = "test", schema = "test", catalog = "")
+@Table(name = "test2")
 public class Note {
 
     @Id
