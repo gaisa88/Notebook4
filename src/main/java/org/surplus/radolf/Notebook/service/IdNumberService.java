@@ -9,23 +9,16 @@ import org.surplus.radolf.Notebook.repository.IdNumberRepository;
 public class IdNumberService {
     private final IdNumberRepository idNumberRepository;
 
-    public void deleteIdNumber(Long id) {
-        idNumberRepository.delete(id);
-    }
-
     public IdNumberService(IdNumberRepository idNumberRepository){
         this.idNumberRepository=idNumberRepository;
-    }
-
-
-    public Iterable<IdNumber> findAll() {
-        return idNumberRepository.findAll();
     }
 
     public Page<IdNumber> findAllByOrderByInsertedAsc(Pageable pageable) {
         return idNumberRepository.findAllByOrderByInsertedAsc(pageable);
     }
-
+    public Page<IdNumber> findAll(Pageable pageable){
+        return idNumberRepository.findAll(pageable);
+    };
     public Page<IdNumber> findAllByOrderByInsertedDesc(Pageable pageable) {
         return idNumberRepository.findAllByOrderByInsertedDesc(pageable);
     }

@@ -6,8 +6,10 @@
 <div class="container">
     <div th:replace="fragments/header :: header"></div>
     <div th:if="${not #lists.isEmpty(IdNumbers)}">
+        <h1>info</h1>
         <div th:replace="operations/list1 :: notebook"></div>
     </div>
+    <h1>some information </h1>
     <div class="align-template" th:if="${#lists.isEmpty(IdNumbers)}">
         <div th:if="${filter} == 'ALL'">
             <h1>Notebook is empty</h1>

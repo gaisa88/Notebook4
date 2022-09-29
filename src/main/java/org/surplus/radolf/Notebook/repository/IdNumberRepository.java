@@ -9,4 +9,6 @@ public interface IdNumberRepository extends JpaRepository<IdNumber, Long> {
 
     Page<IdNumber> findAllByOrderByInsertedAsc(Pageable pageable);
     Page<IdNumber> findAllByOrderByInsertedDesc(Pageable pageable);
+
+    Page<IdNumber> findAll(Pageable pageable);
 }

@@ -1,6 +1,7 @@
 package org.surplus.radolf.Notebook.controllers;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class IdNumberController {
     public String list(Model model, Pageable pageable) {
         Page<IdNumber> IdNumberPage = SortIdNumber(pageable);
         PageWrapper<IdNumber> page = new PageWrapper<IdNumber>(IdNumberPage, "/idnumber");
-        model.addAttribute("idnumbers", page.getContent());
+        model.addAttribute("IdNumbers", page.getContent());
         model.addAttribute("sort", sortInsertedMethod);
         String filterMethod = "ALL";
         model.addAttribute("filter", filterMethod);
@@ -40,7 +41,9 @@ public class IdNumberController {
         Page<IdNumber> page = null;
         switch (sortInsertedMethod) {
             case "ASC":
-                page = idnumberservice.findAllByOrderByInsertedAsc(pageable);
+                page= idnumberservice.findAll(pageable);
+
+//                page = idnumberservice.findAllByOrderByInsertedAsc(pageable);
                 break;
             case "DESC":
                 page = idnumberservice.findAllByOrderByInsertedDesc(pageable);
