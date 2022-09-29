@@ -6,9 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.surplus.radolf.Notebook.entity.IdNumber;
 import org.surplus.radolf.Notebook.entity.Note;
-import org.surplus.radolf.Notebook.service.IdNumberService;
 import org.surplus.radolf.Notebook.service.NoteService;
 
 @Controller
