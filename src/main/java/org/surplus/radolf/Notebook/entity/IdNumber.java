@@ -1,241 +1,62 @@
 package org.surplus.radolf.Notebook.entity;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "c_ge_IdNumber", schema = "dbo")
+@Data
+@Table(name = "c_ge_IdNumber")
 public class IdNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id", nullable = false)
     private Long id;
+    @Column(name = "CreditinfoId")
+    private Integer creditinfoId;
     @Column(name = "Number")
-    private String number;
+    private String Number;
+    @Column(name = "TypeId")
+    private Integer TypeId;
+    @Column(name = "Rank")
+    private Integer Rank;
+    @Column(name = "RegistrationDate")
+    private Timestamp RegistrationDate;
+    @Column(name = "IssueDate")
+    private Timestamp IssueDate;
+    @Column(name = "ExpirationDate")
+    private Timestamp ExpirationDate;
+    @Column(name = "LocationId", nullable = true)
+    private Integer LocationId;
+    @Column(name = "ProviderId")
+    private Integer ProviderId;
     @Column(name = "Inserted")
     private Timestamp inserted;
-
-    @Column(name = "CreditinfoId")
-    private Long creditinfoId;
-
-    @Column(name = "TypeId")
-    private Long typeId;
-    @Column(name = "Rank")
-    private Long rank;
-    @Column(name = "LocationId")
-    private Long locationId;
-    @Column(name = "ProviderId")
-    private Long providerId;
-    @Column(name = "RegistrationDate")
-    private Timestamp registrationDate;
-    @Column(name = "IssueDate")
-    private Timestamp issueDate;
-    @Column(name = "ExpirationDate")
-    private Timestamp expirationDate;
     @Column(name = "InsertedBy")
-    private Long insertedBy;
+    private Integer InsertedBy;
     @Column(name = "Updated")
-    private Timestamp updated;
+    private Date Updated;
     @Column(name = "UpdatedBy")
-    private Long updatedBy;
-//    @Column(name = "Number_dijital")
-//    private String Number_dijital;
-    @Column(name = "is_rnn")
-    private Long is_rnn;
+    private Integer UpdatedBy;
     @Column(name = "is_confirm")
-    private Long is_confirm;
+    private Integer is_confirm;
+    @Column(name = "is_rnn")
+    private Integer is_rnn;
+    //    @Column(name = "Number_dijital")
+//    private String Number_dijital;
     @Column(name = "KatoId")
-    private String katoId;
+    private String KatoId;
     @Column(name = "type_free")
     private String type_free;
 
 
-    public IdNumber(){}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public Timestamp getInserted() {
-        return inserted;
-    }
-
-    public void setInserted(Timestamp inserted) {
-        this.inserted = inserted;
-    }
-
-    public Long getCreditinfoId() {
-        return creditinfoId;
-    }
-
-    public void setCreditinfoId(Long creditinfoId) {
-        this.creditinfoId = creditinfoId;
-    }
-
-    public Long getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
-    }
-
-    public Long getRank() {
-        return rank;
-    }
-
-    public void setRank(Long rank) {
-        this.rank = rank;
-    }
-
-    public Long getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(Long locationId) {
-        this.locationId = locationId;
-    }
-
-    public Long getProviderId() {
-        return providerId;
-    }
-
-    public void setProviderId(Long providerId) {
-        this.providerId = providerId;
-    }
-
-    public Timestamp getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(Timestamp registrationDate) {
-        this.registrationDate = registrationDate;
-    }
-
-    public Timestamp getIssueDate() {
-        return issueDate;
-    }
-
-    public void setIssueDate(Timestamp issueDate) {
-        this.issueDate = issueDate;
-    }
-
-    public Timestamp getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(Timestamp expirationDate) {
-        this.expirationDate = expirationDate;
-    }
-
-    public Long getInsertedBy() {
-        return insertedBy;
-    }
-
-    public void setInsertedBy(Long insertedBy) {
-        this.insertedBy = insertedBy;
-    }
-
-    public Timestamp getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Timestamp updated) {
-        this.updated = updated;
-    }
-
-    public Long getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(Long updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Long getIs_rnn() {
-        return is_rnn;
-    }
-
-    public void setIs_rnn(Long is_rnn) {
-        this.is_rnn = is_rnn;
-    }
-
-    public Long getIs_confirm() {
-        return is_confirm;
-    }
-
-    public void setIs_confirm(Long is_confirm) {
-        this.is_confirm = is_confirm;
-    }
-
-    public String getKatoId() {
-        return katoId;
-    }
-
-    public void setKatoId(String katoId) {
-        this.katoId = katoId;
-    }
-
-    public String getType_free() {
-        return type_free;
-    }
-
-    public void setType_free(String type_free) {
-        this.type_free = type_free;
-    }
-
-    public IdNumber(Long id, String number, Timestamp inserted, Long creditinfoId, Long typeId, Long rank, Long locationId, Long providerId, Timestamp registrationDate, Timestamp issueDate, Timestamp expirationDate, Long insertedBy, Timestamp updated, Long updatedBy, Long is_rnn, Long is_confirm, String katoId, String type_free) {
-        this.id = id;
-        this.number = number;
-        this.inserted = inserted;
-        this.creditinfoId = creditinfoId;
-        this.typeId = typeId;
-        this.rank = rank;
-        this.locationId = locationId;
-        this.providerId = providerId;
-        this.registrationDate = registrationDate;
-        this.issueDate = issueDate;
-        this.expirationDate = expirationDate;
-        this.insertedBy = insertedBy;
-        this.updated = updated;
-        this.updatedBy = updatedBy;
-        this.is_rnn = is_rnn;
-        this.is_confirm = is_confirm;
-        this.katoId = katoId;
-        this.type_free = type_free;
-    }
-//    @Column(name = "TypeId")
-//    private Long TypeId;
-//    @Column(name = "ProviderId")
-//    private Long ProviderId;
-//    @Column(name = "CreditinfoId")
-//    private Long CreditInfoId;
-//    @Column(name = "InsertedBy")
-//    private Long InsertedBy;
-//    @Column(name = "Updated")
-//    private Timestamp Updated;
-//    @Column(name = "UpdatedBy")
-//    private Long UpdatedBy;
-
-
 //    @Override
-//    public String toString() {
+//    public String toString() {// переопределение метода toString для вывода данных в json
 //        return String.format(
-//                "IdNumber[id=%d, CreditInfoId='%d', Number='%s', TypeId='%d', ProviderId='%d', Inserted='%s', InsertedBy='%d', Updated=%s, UpdatedBy='%d']",
-//                id, CreditInfoId, Number, TypeId, ProviderId, Inserted, InsertedBy, Updated, UpdatedBy);
+//                "IdNumber[id=%d, CreditinfoId='%d', Number='%s', TypeId='%d', Rank=%d, RegistrationDate='%s', IssueDate='%s', ExpirationDate='%s', LocationId=%d, ProviderId='%d', Inserted='%s', InsertedBy='%d', Updated=%s, UpdatedBy='%d', is_confirm='%d', is_rnn='%d', KatoId='%s', type_free='%s' ]",
+//                id, CreditinfoId, Number, TypeId, Rank, RegistrationDate, IssueDate, ExpirationDate, LocationId, ProviderId, Inserted, InsertedBy, Updated, UpdatedBy, is_confirm, is_rnn, KatoId, type_free);
 //    }
 }
-

@@ -7,13 +7,13 @@
 <div class="container">
     <div th:replace="fragments/header :: header"></div>
     <div class="container">
-        <form class="form-horizontal" th:action="@{/save}" name="input_form" id="input_form"
-              method="post" role="form">
+        <form class="form-horizontal" th:action="@{/search}" method="get">
             <div class="form-group">
-                <input type="text" class="form-control" id="Number" th:name="Number" placeholder="Enter your Number." maxlength="100"/>
+                <input type="text" class="form-control" name="Number" placeholder="Enter searching Number." maxlength="100"/>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Search Subject</button>
         </form>
+        <a th:href="@{/}"> Back to Subjects List</a>
     </div>
 </div>
 </body>
