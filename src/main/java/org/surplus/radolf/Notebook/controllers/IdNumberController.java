@@ -52,11 +52,10 @@ public class IdNumberController {
     public String searchNumber() {
         return "operations/searchNumber";
     }
-
-//    @GetMapping("/cuaUser")
-//    public String cuaUser() {
-//        return "operations/cuaUser";
-//    }
+    @GetMapping("/searchbyiin")
+    public String searchNumberByIIN() {
+        return "operations/searchNumberByIIN";
+    }
 
     @GetMapping("/search")
     public String indexWithQuery(@RequestParam("Number") String Number, Model model, Pageable pageable) {
@@ -68,6 +67,17 @@ public class IdNumberController {
         model.addAttribute("page", page);
         return "index";
     }
+//    @GetMapping("/searchbiin")
+//    public String indexWithQueryNumbers(Model model, Pageable pageable) {
+//        Page<IdNumber> IdNumberPage = SortIdNumber(pageable);
+//        PageWrapper<IdNumber> page = new PageWrapper<IdNumber>(IdNumberPage, "/");
+//        model.addAttribute("IdNumbers", page.getContent());
+//        model.addAttribute("sort", sortInsertedMethod);
+//        model.addAttribute("filter", filterMethod);
+//        model.addAttribute("page", page);
+//        return "/providersdocs";
+//    }
+
 
     private Page<IdNumber> SortIdNumber(Pageable pageable) {
         Page<IdNumber> page = null;

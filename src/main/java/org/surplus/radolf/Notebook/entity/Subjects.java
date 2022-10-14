@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Entity
 @Data
@@ -27,4 +28,8 @@ public class Subjects {
     private Timestamp inserted;
     @Column(name = "InsertedBy")
     private Integer InsertedBy;
+
+    @OneToOne
+    @JoinColumn(name = "creditinfoId")
+    private IdNumber idNumber;
 }

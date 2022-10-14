@@ -1,11 +1,11 @@
 package org.surplus.radolf.Notebook.entity;
 
-
 import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+
 
 @Entity
 @Data
@@ -45,12 +45,17 @@ public class IdNumber {
     private Integer is_confirm;
     @Column(name = "is_rnn")
     private Integer is_rnn;
-    //    @Column(name = "Number_dijital")
-//    private String Number_dijital;
+
     @Column(name = "KatoId")
     private String KatoId;
     @Column(name = "type_free")
     private String type_free;
+
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "CREDITINFOID", insertable = false, updatable = false)
+//    @Fetch(FetchMode.JOIN)
+//    private Subjects subjects;
 
 
 //    @Override
