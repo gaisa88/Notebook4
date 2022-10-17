@@ -5,10 +5,10 @@
 <body>
 <div class="container">
     <div th:replace="fragments/header :: header"></div>
-    <div th:if="${not #lists.isEmpty(Subjectss)}">
-        <div th:replace="operations/list2 :: Subjects"></div>
+    <div th:if="${not #lists.isEmpty(IdNumbers)}">
+        <div th:replace="operations/list2 :: IdNumbers"></div>
     </div>
-    <div class="align-template" th:if="${#lists.isEmpty(Subjectss)}">
+    <div class="align-template" th:if="${#lists.isEmpty(IdNumbers)}">
         <div th:if="${filter} == 'ALL'">
             <h1>Notebook is empty</h1>
             <p class="lead">Just add another note and choose 'All' or 'Not Done' filter through the navigation bar</p>

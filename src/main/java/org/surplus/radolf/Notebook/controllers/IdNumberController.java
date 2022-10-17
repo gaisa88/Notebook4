@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.surplus.radolf.Notebook.entity.IdNumber;
+import org.surplus.radolf.Notebook.entity.Subjects;
 import org.surplus.radolf.Notebook.service.IdNumberService;
 
 @Controller
@@ -67,17 +68,16 @@ public class IdNumberController {
         model.addAttribute("page", page);
         return "index";
     }
-//    @GetMapping("/searchbiin")
-//    public String indexWithQueryNumbers(Model model, Pageable pageable) {
-//        Page<IdNumber> IdNumberPage = SortIdNumber(pageable);
-//        PageWrapper<IdNumber> page = new PageWrapper<IdNumber>(IdNumberPage, "/");
-//        model.addAttribute("IdNumbers", page.getContent());
-//        model.addAttribute("sort", sortInsertedMethod);
-//        model.addAttribute("filter", filterMethod);
-//        model.addAttribute("page", page);
-//        return "/providersdocs";
-//    }
-
+    @GetMapping("/searchbiin")
+    public String indexWithQuery1(@RequestParam("Number") String Number, Model model, Pageable pageable) {
+        Page<IdNumber> IdNumberPage = SortIdNumber(pageable);
+        PageWrapper<IdNumber> page = new PageWrapper<IdNumber>(IdNumberPage, "/providersdocs");
+        model.addAttribute("IdNumbers", idnumberservice.findAllByNumber(Number));
+        model.addAttribute("sort", sortInsertedMethod);
+        model.addAttribute("filter", filterMethod);
+        model.addAttribute("page", page);
+        return "/providersdocs";
+    }
 
     private Page<IdNumber> SortIdNumber(Pageable pageable) {
         Page<IdNumber> page = null;

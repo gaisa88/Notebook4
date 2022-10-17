@@ -40,7 +40,7 @@ public class IdNumberService {
     public List<IdNumber> findAllByNumber(String Number) {
         return idNumberRepository.findAllByNumber(Number);
     }
-    public List<IdNumber> findAllNumbers(Pageable pageable) {
-        return idNumberRepository.findAllNumbers(pageable);
-    }
+//    public List<IdNumber> findAllNumbers(Pageable pageable) {
+//        return idNumberRepository.findAllNumbers(pageable);
+//    }
 }

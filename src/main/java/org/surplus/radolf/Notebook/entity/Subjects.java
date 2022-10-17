@@ -29,7 +29,4 @@ public class Subjects {
     @Column(name = "InsertedBy")
     private Integer InsertedBy;
 
-    @OneToOne
-    @JoinColumn(name = "creditinfoId")
-    private IdNumber idNumber;
 }
