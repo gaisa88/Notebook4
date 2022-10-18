@@ -50,13 +50,9 @@ public class IdNumber {
     private String KatoId;
     @Column(name = "type_free")
     private String type_free;
-    @ManyToOne
-    @JoinColumn(name = "CREDITINFOID")
-    private Subjects subjects;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "CREDITINFOID", insertable = false, updatable = false)
-//    @Fetch(FetchMode.JOIN)
+//    @JoinColumn(name = "CREDITINFOID")
 //    private Subjects subjects;
 
 

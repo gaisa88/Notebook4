@@ -43,4 +43,7 @@ public class IdNumberService {
 //    public List<IdNumber> findAllNumbers(Pageable pageable) {
 //        return idNumberRepository.findAllNumbers(pageable);
 //    }
+//    public List<IdNumber> FindAllWithDescriptionQuery(String Number) {
+//        return idNumberRepository.FindAllWithDescriptionQuery(Number);
+//    }
 }

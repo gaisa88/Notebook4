@@ -4,7 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Set;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @Data
@@ -28,5 +31,7 @@ public class Subjects {
     private Timestamp inserted;
     @Column(name = "InsertedBy")
     private Integer InsertedBy;
+//    @OneToMany(cascade = ALL, mappedBy ="subjects")
+//    private List<IdNumber> idNumberList;
 
 }
