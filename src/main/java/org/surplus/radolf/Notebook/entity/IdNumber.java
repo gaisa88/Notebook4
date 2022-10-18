@@ -15,6 +15,7 @@ public class IdNumber {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id", nullable = false)
     private Long id;
+
     @Column(name = "CreditinfoId")
     private Integer creditinfoId;
     @Column(name = "Number")
@@ -51,9 +52,9 @@ public class IdNumber {
     @Column(name = "type_free")
     private String type_free;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "CREDITINFOID")
-//    private Subjects subjects;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CREDITINFOID")
+    private Subjects subjects;
 
 
 //    @Override

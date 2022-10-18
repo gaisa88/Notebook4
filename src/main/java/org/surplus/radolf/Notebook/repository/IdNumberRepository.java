@@ -19,7 +19,8 @@ public interface IdNumberRepository extends JpaRepository<IdNumber, Long> {
 
 //    @Query("SELECT c from IdNumber c join c.creditinfoId s")
 //    List findAllNumbers(Pageable pageable);
-//    @Query("FROM IdNumber AS c LEFT JOIN c.subjects AS m WHERE c.Number = ?1")    //This is using a named query method
-//    public List<IdNumber> FindAllWithDescriptionQuery(String Number);
+
+    @Query("FROM IdNumber AS c LEFT JOIN c.subjects AS m WHERE c.Number = :Number")    //This is using a named query method
+    List FindAllWithDescriptionQuery(String Number);
 
 }

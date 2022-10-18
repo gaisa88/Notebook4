@@ -31,7 +31,7 @@ public class Subjects {
     private Timestamp inserted;
     @Column(name = "InsertedBy")
     private Integer InsertedBy;
-//    @OneToMany(cascade = ALL, mappedBy ="subjects")
-//    private List<IdNumber> idNumberList;
+    @OneToMany(cascade = ALL, mappedBy ="subjects")
+    private List<IdNumber> idNumberList;
 
 }
